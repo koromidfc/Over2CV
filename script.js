@@ -10,7 +10,7 @@ const playerNameEl = document.querySelector('#playerNameEl')
 const titleInGame = document.querySelector('#titleInGame')
 const heroName = document.querySelector('#heroNameEl')
 let statsLoaded = false; 
-//Quand je clique sur le bouton rechercher
+//Quand je clique sur le bouton rechercher,
 getStats.addEventListener('click', () => {
     const playerName = document.getElementById('playerName').value.trim();
     console.log(playerName)
@@ -34,21 +34,21 @@ getStats.addEventListener('click', () => {
         alert('Veuillez entrer le nom du joueur Overwatch.');
     }
 });
-//Search for a specific player
+//Envoie une requete à l'API pour récupérer les données du joueur spécifié par x
 function getPlayer(x) {
     try {
         fetch(`https://overfast-api.tekrop.fr/players/${x}`)
             .then(response => response.json())
             .then(response => {
                 displayInfo(response)
-                document.getElementById('playerName').value = ''//Clear the form after getting the response
+                document.getElementById('playerName').value = ''//Efface le form après avoir eu la réponse
             })
             .catch(error => alert("Erreur : " + error));
     } catch (error) {
         alert("Une erreur est survenue : " + error);
     }
 }
-//Get player summary stats
+//Envoie une requête à l'API pour récuperer les stats générales
 function getPlayerSummaryStats(playerName) {
     try {
         fetch(`https://overfast-api.tekrop.fr/players/${playerName}/stats/summary`)
@@ -59,7 +59,7 @@ function getPlayerSummaryStats(playerName) {
         alert("Une erreur est survenue : " + error);
     }
 }
-//Get player ranked stats
+//Envoie une requête à l'API pour récuperer les stats compétitives du joueur
 function getPlayerRankedStats(playerName) {
     try {
         fetch(`https://overfast-api.tekrop.fr/players/${playerName}/stats/summary?gamemode=competitive`)
@@ -70,7 +70,7 @@ function getPlayerRankedStats(playerName) {
         alert("Une erreur est survenue : " + error);
     }
 }
-//Get player quickplay stats
+//Envoie une requête à l'API pour récuperer les stats de parties rapides du joueur
 function getPlayerQuickplayStats(playerName) {
     try {
         fetch(`https://overfast-api.tekrop.fr/players/${playerName}/stats/summary?gamemode=quickplay`)
@@ -81,7 +81,7 @@ function getPlayerQuickplayStats(playerName) {
         alert("Une erreur est survenue : " + error);
     }
 }
-//Get player Hero stats
+//Envoie une requête à l'API pour récuperer les stats du héro en partie compétitive de Mercy
 function getPlayerHeroStats(playerName) {
     try {
         fetch(`https://overfast-api.tekrop.fr/players/${playerName}/stats/career?gamemode=competitive&hero=mercy`)
@@ -92,7 +92,29 @@ function getPlayerHeroStats(playerName) {
         alert("Une erreur est survenue : " + error);
     }
 }
+//A VENIR Envoie une requête à l'API pour récuperer le portrait du personnage.
+//Get player Hero stats
+// function getPlayerHeroStats(playerName,heroes) {
+//     try {
+//         fetch(`https://overfast-api.tekrop.fr/players/${playerName}/stats/career?gamemode=competitive&hero=${heroes}`)
+//             .then(response => response.json())
+//             .then(response => displayMercyStats(response))
+//             .catch(error => alert("Erreur : " + error));
+//     } catch (error) {
+//         alert("Une erreur est survenue : " + error);
+//     }
+// }
 //Get Hero Portrait
+// function getHeroData(heroes) {
+//     try {
+//         fetch(`https://overfast-api.tekrop.fr/heroes/${heroes}`)
+//             .then(response => response.json())
+//             .then(response => displayMercyStats(response))
+//             .catch(error => alert("Erreur : " + error));
+//     } catch (error) {
+//         alert("Une erreur est survenue : " + error);
+//     }
+// }
 //Afficher les informations générales = Pseudo + Titre + Avatar + Bannière
 function displayInfo(stats) {
     const avatar = document.createElement('img')
@@ -201,25 +223,3 @@ function displayHeroStats (stats) {
     listHeroAvgStat.appendChild(selfHealingAVG)
     listHeroAvgStat.appendChild(damageAmpAVG)
 }
-//Get player Hero stats
-// function getPlayerHeroStats(playerName,heroes) {
-//     try {
-//         fetch(`https://overfast-api.tekrop.fr/players/${playerName}/stats/career?gamemode=competitive&hero=${heroes}`)
-//             .then(response => response.json())
-//             .then(response => displayMercyStats(response))
-//             .catch(error => alert("Erreur : " + error));
-//     } catch (error) {
-//         alert("Une erreur est survenue : " + error);
-//     }
-// }
-//Get Hero Portrait
-// function getHeroData(heroes) {
-//     try {
-//         fetch(`https://overfast-api.tekrop.fr/heroes/${heroes}`)
-//             .then(response => response.json())
-//             .then(response => displayMercyStats(response))
-//             .catch(error => alert("Erreur : " + error));
-//     } catch (error) {
-//         alert("Une erreur est survenue : " + error);
-//     }
-// }
