@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CVOW2</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="banderol">
+            <div id="profileContent">
+                <input type="text" id="playerName" placeholder="Entrez le nom du joueur">
+                <button id="getStatsBtn" alt="Rechercher">Search</button>
+            </div>
+            <div id="profilePicture"></div>
+            <div id="playercard"></div>
+            <div class="titleNameEl">
+                <h1 id="playerNameEl">Name</h1>
+                <p id="titleInGame">Title in game</p> 
+            </div>   
+        </div>  
+    </header>
+    <div class="globalContent">
+        <div id="statsContainer">
+            <h1>GLOBAL</h1>
+        </div>
+        <div id="modesContainer">
+            <div id="quickplayMode">
+                <h1> QUICK PLAY</h1>
+            </div>
+            <div id="rankedMode">
+                <h1> COMPETITIVE LAST SEASON</h1>
+            </div>
+        </div>
+    </div>
+    <div id="heroesContent"> 
+        <select name="" id="heroes">
+            <option value="mercy">Mercy</option>
+            <option value="ana">Ana</option>
+            <option value="vital">Vital</option>
+            <option value="zen">Zen</option>
+            <option value="illari">Illari</option>
+        </select>
+        <h1 id="heroNameEl">Hero's name</h1>
+        <div id="profileHeroEl"></div>
+        <div id="heroStat">MOST IN GAME</div>
+        <div id="heroAvgStat">AVERAGE</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'BigNoodleTitling', sans-serif;
+}
+.banderol{
+    height: 395px;
+    background-color: rgb(67, 67, 67);
+}
+#profilePicture {
+    border: 5px solid white;
+    background-image: url(img/Mercy_icon.png);
+    background-size: cover;
+    position: absolute;
+    top: 30%;
+    left: 110px;
+    width: 150px;
+    height: 150px;
+}
+input {
+    border: none;
+}
+button {
+    color: white;
+    background-color: rgb(196, 196, 196);
+    border: none;
+    width: 50px;
+    height: 25px;
+}
+#playerNameEl{
+    font-size: 80px;
+    color: white;
+    position: absolute;
+    top: 23%;
+    left:20%;
+}
+#titleInGame{
+    font-size: 25px;
+    color: white;
+    position: absolute;
+    top: 35%;
+    left: 20%;
+}
+#profileContent {
+    display: flex;
+    flex-direction: row;
+}
+.globalContent {
+    display: flex;
+    flex-direction: row;
+}
+#statsContainer {
+    color: white;
+    width: 20%;
+    padding-top:40px;
+    text-align: center;
+    font-size: 25px;
+    background-color: rgb(67, 67, 67);
+}
+#statsContainer h1 {
+    font-size: 40px;
+}
+#modesContainer {
+    display: flex;
+    width: 80%;
+    height: 50vh;
+}
+#modesContainer h1 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+}
+#quickplayMode {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    width:50%;
+    height: 50vh;
+}
+#rankedMode {
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    width: 50%;
+    height: 50vh;
+}
+#heroesContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(67, 67, 67);
+}
+#heroNameEl{
+    text-align: center;
+    font-size: 80px;
+    color: white;
+    margin-left: 50px; 
+}
+#profileHeroEl {
+    margin: 50px;
+    border-top: 5px solid white;
+    border-right: 5px solid white;
+    border-bottom: 5px solid white;
+    background-image: url(img/Mercy_icon.png);
+    background-size: cover;
+    width: 150px;
+    height: 150px; 
+}
+#heroes {
+    padding-right: 20px;
+}
+#heroStat {
+    color: white;
+}
+#heroAvgStat {
+    color: white;
+}
